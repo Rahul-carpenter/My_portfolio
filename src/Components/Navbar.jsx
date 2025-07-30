@@ -27,13 +27,14 @@ const Navbar = () => {
         {/* Logo */}
         <motion.a
           href="#hero"
-          className="text-xl sm:text-2xl md:text-3xl font-extrabold gradient-text Logo"
+          className="text-xl sm:text-2xl md:text-3xl font-extrabold Logo"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={closeMobileMenu}
         >
           Rahul
         </motion.a>
+
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex gap-8 text-sm lg:text-base font-medium">

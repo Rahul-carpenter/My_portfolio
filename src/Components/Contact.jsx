@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import {  Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 
 const serviceOptions = [
   { value: "web-dev", label: "Web Development (Flask/Django)" },
@@ -22,7 +22,6 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     setIsSubmitting(true);
-    // Form will be handled by FormSubmit
     setTimeout(() => setIsSubmitting(false), 2000);
   };
 
@@ -32,9 +31,9 @@ const Contact = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -44,9 +43,9 @@ const Contact = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -83,18 +82,23 @@ const Contact = () => {
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
                 Get in Touch
               </h3>
-              
-              <div className="space-y-6">
-                <motion.div variants={itemVariants} className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-pink-600 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                    <p className="text-gray-800 dark:text-white font-medium">rahulcarpenter486@gmail.com</p>
-                  </div>
-                </motion.div>
+              {/* Email always visible with icon */}
+              <div className="flex items-start space-x-4 mb-6 break-words">
+              <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-pink-600 rounded-lg flex items-center justify-center">
+                <Mail className="w-6 h-6 text-white" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-800 dark:text-white font-medium select-all break-all">
+                    rahulcarpenter486@gmail.com
+                  </span>
+                </div>
+              </div>
+            </div>
 
+
+              <div className="space-y-6">
                 <motion.div variants={itemVariants} className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-pink-600 rounded-lg flex items-center justify-center">
                     <Phone className="w-6 h-6 text-white" />
@@ -104,7 +108,6 @@ const Contact = () => {
                     <p className="text-gray-800 dark:text-white font-medium">Available on request</p>
                   </div>
                 </motion.div>
-
                 <motion.div variants={itemVariants} className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-pink-600 rounded-lg flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-white" />
@@ -116,7 +119,7 @@ const Contact = () => {
                 </motion.div>
               </div>
 
-              {/* Social Links */}
+              {/* Social Links with icons */}
               <motion.div variants={itemVariants} className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Follow me on</p>
                 <div className="flex space-x-4">
@@ -128,7 +131,7 @@ const Contact = () => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className="text-sm font-bold">GH</span>
+                    <Github className="w-5 h-5" />
                   </motion.a>
                   <motion.a
                     href="https://linkedin.com/in/rahul-carpenter"
@@ -138,7 +141,7 @@ const Contact = () => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className="text-sm font-bold">LI</span>
+                    <Linkedin className="w-5 h-5" />
                   </motion.a>
                 </div>
               </motion.div>
@@ -177,7 +180,6 @@ const Contact = () => {
                       className="w-full p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
                     />
                   </motion.div>
-
                   <motion.div variants={itemVariants}>
                     <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
                       Email <span className="text-red-500">*</span>
@@ -206,7 +208,6 @@ const Contact = () => {
                       className="w-full p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
                     />
                   </motion.div>
-
                   <motion.div variants={itemVariants}>
                     <label htmlFor="service" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
                       Service Needed <span className="text-red-500">*</span>

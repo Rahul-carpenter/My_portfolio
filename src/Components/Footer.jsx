@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="grid md:grid-cols-4 gap-8 mb-8">
         {/* Brand Section */}
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Rj</h3>
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Rahul</h3>
           <p className="text-gray-600 dark:text-gray-400 text-sm">
             DevOps & Cloud enthusiast building real-world tools and platforms with modern tech.
           </p>
@@ -78,10 +78,10 @@ const Footer = () => {
           <h3 className="text-lg font-bold text-gray-900 dark:text-white">Contact Info</h3>
           <div className="space-y-2">
             <a
-              href="mailto:rj@example.com"
+              href="mailto:rahulcarpenter@gmail.com"
               className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition"
             >
-              <IoMdMail /> rahulcarpenter09.com
+              <IoMdMail /> rahulcarpenter09@gmail.com
             </a>
           </div>
         </div>
